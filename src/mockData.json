@@ -1,0 +1,43 @@
+const mockTransactions: Transaction[] = [
+  {
+    id: '1',
+    amount: 3200,
+    category: 'Salary',
+    description: 'Monthly salary',
+    date: new Date('2025-03-01'),
+    type: 'income'
+  },
+  {
+    id: '2',
+    amount: 1200,
+    category: 'Rent',
+    description: 'Monthly rent',
+    date: new Date('2025-03-01'),
+    type: 'expense'
+  },
+  {
+    id: '3',
+    amount: 85.50,
+    category: 'Food',
+    description: 'Whole Foods',
+    date: new Date('2025-03-06'),
+    type: 'expense'
+  },
+  {
+    id: '4',
+    amount: 45.00,
+    category: 'Transport',
+    description: 'Shell Gas',
+    date: new Date('2025-03-05'),
+    type: 'expense'
+  },
+  // Add 20-30 more mock transactions
+  {
+    id: '30',
+    amount: 150,
+    category: 'Entertainment',
+    description: 'Concert tickets',
+    date: new Date('2025-02-15'),
+    type: 'expense'
+  }
+]
