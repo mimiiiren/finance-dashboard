@@ -1,5 +1,5 @@
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -17,7 +17,7 @@ import {
   DialogTitle,
   DialogFooter,
   DialogClose,
-} from "../components/ui/dialog";
+} from "@/components/ui/dialog";
 import { useState } from "react";
 import { type Category, type TransactionType } from "@/types";
 import { useTransactionStore } from "../store/store";

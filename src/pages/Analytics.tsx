@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTransactionStore } from "@/store/store";
 import { useMonthlyTransactions } from "@/hooks/useMonthlyTransactions";
-import IncomeExpenseLineChart from "@/components/LineChartIncomeExpense";
+import IncomeExpenseLineChart from "@/components/analytics/LineChartIncomeExpense";
 export default function Analytics() {
   const transactions = useTransactionStore((state) => state.transactions);
   const { monthlyDataArray, threeMonths, sixMonths, twelveMonths } =
