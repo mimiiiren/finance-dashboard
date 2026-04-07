@@ -3,7 +3,6 @@ import { Button } from "../components/ui/button";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -133,7 +132,7 @@ export default function Transactions() {
               onChange={(e) => setAmount(Number(e.target.value))}
             />
             <select
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCategory(e.target.value as Category)}
               value={category}
               className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1"
             >

@@ -12,8 +12,9 @@ export function cn(...inputs: ClassValue[]) {
 //  returns only the month in like Mar, Apr for income expense chart
 export const formatMonth = (dateString: string) => {
   // split by dashes -, const [year, month, day] = ["2026", "03", "01"]
-  const [year, month, day] = dateString.split("-");
-  const dataObj = new Date(Number(year), Number(month - 1), Number(day));
+  // convert to number for easy calculations
+  const [year, month, day] = dateString.split("-").map(Number);
+  const dataObj = new Date(year, month - 1, day);
     return dataObj.toLocaleDateString("en-US", {month:"short", year: "2-digit"});
   }
   export const options: Intl.DateTimeFormatOptions = {

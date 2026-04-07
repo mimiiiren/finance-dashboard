@@ -113,7 +113,7 @@ export default function Budgets() {
               <DialogTitle>Set Category Budget</DialogTitle>
             </DialogHeader>
             <select
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCategory(e.target.value as Category)}
               value={category}
               className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1"
             >
