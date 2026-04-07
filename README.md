@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Happy Money 💰
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal finance dashboard built to help users track income and expenses, visualize spending patterns, and manage monthly budgets.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Happy Money gives users a clear picture of their financial health through an intuitive interface. Users can log transactions, set category budgets, and spot trends through interactive charts — all in one place.
 
-## React Compiler
+## Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Transaction Tracking** — Log income and expenses with category, date, description, and amount
+- **Budget Management** — Set monthly spending limits per category with real-time progress indicators
+- **Spending Analytics** — Visualize income vs expenses over time with a line chart
+- **Category Breakdown** — See spending distribution by category with an interactive pie chart
+- **Dashboard Overview** — Monthly summary of total income, total expenses, and net balance
+- **Persistent State** — Global state management keeps data consistent across all pages
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** with **TypeScript** — component architecture and type safety
+- **Zustand** — lightweight global state management
+- **Tailwind CSS** — utility-first styling
+- **shadcn/ui** — accessible, unstyled component primitives
+- **Recharts** — composable chart library for data visualization
+- **React Router** — client-side navigation
+- **Vite** — fast development build tool
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
+```bash
+# Clone the repository
+https://github.com/mimiiiren/finance-dashboard.git
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Install dependencies
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+```text
+src/
+src/
+├── components/
+│   ├── layout/      # Sidebar and app shell
+│   ├── dashboard/   # Chart and visualization components
+│   └── ui/          # shadcn/ui component library
+├── pages/           # Dashboard, Transactions, Budgets, Analytics
+├── store/           # Zustand global state management
+├── types/           # TypeScript interfaces and shared types
+├── data/            # Mock data and constants for development
+└── lib/             # Helper functions (formatting, calculations)
 ```
+
+## Key Technical Decisions
+
+**Zustand over Context API** — chosen for its minimal boilerplate and straightforward API. Transaction and budget state is accessible across all pages without prop drilling.
+
+**TypeScript throughout** — strict typing on transaction and budget interfaces catches category mismatches and data shape errors at compile time rather than runtime.
+
+**Component-driven architecture** — chart components are isolated and receive pre-processed data, keeping business logic out of the UI layer.
+
+## Upcoming Features
+
+**CSV Export/Import** — Download transaction history or bulk-upload bank statements.
+
+**Dark Mode Support** — Seamless theme switching using `next-themes`.
+
+**Data Persistence** — Integration with Supabase or PostgreSQL for cloud syncing.
